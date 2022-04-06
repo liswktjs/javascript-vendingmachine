@@ -2765,7 +2765,7 @@ var AuthStore = /** @class */ (function () {
             }); },
             _a[_utils_constants__WEBPACK_IMPORTED_MODULE_1__.AuthActionTypes.LOGOUT] = function (payload) {
                 localStorage.clear();
-                window.location.href = 'http://localhost:9000/#login';
+                window.location.href = '#login';
             },
             _a[_utils_constants__WEBPACK_IMPORTED_MODULE_1__.AuthActionTypes.EDIT_USER_INFO] = function (payload) { return __awaiter(_this, void 0, void 0, function () {
                 var userId, name, password, editedData, editResponse;
@@ -2805,7 +2805,7 @@ var AuthStore = /** @class */ (function () {
                         return [4 /*yield*/, this.reducer[actionType](payload)];
                     case 1:
                         _c.sent();
-                        window.location.href = 'http://localhost:9000/#';
+                        window.location.href = '#';
                         return [3 /*break*/, 3];
                     case 2:
                         _b = _c.sent();
