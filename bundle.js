@@ -1311,13 +1311,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _stores_localStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../stores/localStorage */ "./src/stores/localStorage.js");
-/* harmony import */ var _EditUserInfoComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./EditUserInfoComponent */ "./src/components/EditUserInfoComponent.js");
-/* harmony import */ var _headerComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./headerComponent */ "./src/components/headerComponent.js");
-/* harmony import */ var _loginComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./loginComponent */ "./src/components/loginComponent.js");
-/* harmony import */ var _ProductManagementComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ProductManagementComponent */ "./src/components/ProductManagementComponent.js");
-/* harmony import */ var _PurchaseProductComponent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./PurchaseProductComponent */ "./src/components/PurchaseProductComponent.js");
-/* harmony import */ var _RechargeChangeComponent__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./RechargeChangeComponent */ "./src/components/RechargeChangeComponent.js");
-/* harmony import */ var _SinginComponent__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./SinginComponent */ "./src/components/SinginComponent.js");
+/* harmony import */ var _utils_constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/constants */ "./src/utils/constants.ts");
+/* harmony import */ var _EditUserInfoComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./EditUserInfoComponent */ "./src/components/EditUserInfoComponent.js");
+/* harmony import */ var _headerComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./headerComponent */ "./src/components/headerComponent.js");
+/* harmony import */ var _loginComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./loginComponent */ "./src/components/loginComponent.js");
+/* harmony import */ var _ProductManagementComponent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ProductManagementComponent */ "./src/components/ProductManagementComponent.js");
+/* harmony import */ var _PurchaseProductComponent__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./PurchaseProductComponent */ "./src/components/PurchaseProductComponent.js");
+/* harmony import */ var _RechargeChangeComponent__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./RechargeChangeComponent */ "./src/components/RechargeChangeComponent.js");
+/* harmony import */ var _SinginComponent__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./SinginComponent */ "./src/components/SinginComponent.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -1351,6 +1352,7 @@ function _classPrivateFieldSet(receiver, privateMap, value) { var descriptor = _
 function _classExtractFieldDescriptor(receiver, privateMap, action) { if (!privateMap.has(receiver)) { throw new TypeError("attempted to " + action + " private field on non-instance"); } return privateMap.get(receiver); }
 
 function _classApplyDescriptorSet(receiver, descriptor, value) { if (descriptor.set) { descriptor.set.call(receiver, value); } else { if (!descriptor.writable) { throw new TypeError("attempted to set read only private field"); } descriptor.value = value; } }
+
 
 
 
@@ -1436,19 +1438,19 @@ var VendingMachineComponent = /*#__PURE__*/function () {
   }, {
     key: "initChildComponents",
     value: function initChildComponents() {
-      _classPrivateFieldSet(this, _HeaderComponent, new _headerComponent__WEBPACK_IMPORTED_MODULE_2__["default"](this.$app));
+      _classPrivateFieldSet(this, _HeaderComponent, new _headerComponent__WEBPACK_IMPORTED_MODULE_3__["default"](this.$app));
 
-      _classPrivateFieldSet(this, _ProductManagementComponent, new _ProductManagementComponent__WEBPACK_IMPORTED_MODULE_4__["default"](this.$app));
+      _classPrivateFieldSet(this, _ProductManagementComponent, new _ProductManagementComponent__WEBPACK_IMPORTED_MODULE_5__["default"](this.$app));
 
-      _classPrivateFieldSet(this, _PurchaseProductComponent, new _PurchaseProductComponent__WEBPACK_IMPORTED_MODULE_5__["default"](this.$app));
+      _classPrivateFieldSet(this, _PurchaseProductComponent, new _PurchaseProductComponent__WEBPACK_IMPORTED_MODULE_6__["default"](this.$app));
 
-      _classPrivateFieldSet(this, _RechargeChangeComponent, new _RechargeChangeComponent__WEBPACK_IMPORTED_MODULE_6__["default"](this.$app));
+      _classPrivateFieldSet(this, _RechargeChangeComponent, new _RechargeChangeComponent__WEBPACK_IMPORTED_MODULE_7__["default"](this.$app));
 
-      _classPrivateFieldSet(this, _LoginComponent, new _loginComponent__WEBPACK_IMPORTED_MODULE_3__["default"](this.$app));
+      _classPrivateFieldSet(this, _LoginComponent, new _loginComponent__WEBPACK_IMPORTED_MODULE_4__["default"](this.$app));
 
-      _classPrivateFieldSet(this, _SignInComponent, new _SinginComponent__WEBPACK_IMPORTED_MODULE_7__["default"](this.$app));
+      _classPrivateFieldSet(this, _SignInComponent, new _SinginComponent__WEBPACK_IMPORTED_MODULE_8__["default"](this.$app));
 
-      _classPrivateFieldSet(this, _EditUserComponent, new _EditUserInfoComponent__WEBPACK_IMPORTED_MODULE_1__["default"](this.$app));
+      _classPrivateFieldSet(this, _EditUserComponent, new _EditUserInfoComponent__WEBPACK_IMPORTED_MODULE_2__["default"](this.$app));
     }
   }, {
     key: "showSectionByRoute",
@@ -1527,6 +1529,11 @@ var VendingMachineComponent = /*#__PURE__*/function () {
 
           _classPrivateFieldGet(this, _EditUserComponent).renderUserInfo();
         }
+
+        if (route === 'login' || route === 'signin') {
+          alert(_utils_constants__WEBPACK_IMPORTED_MODULE_1__.ERROR_MSG.WRONG_ACCESS);
+          window.location.href = 'http://localhost:9000/#';
+        }
       }
 
       if (!this.checkLoginStatus()) {
@@ -1572,6 +1579,11 @@ var VendingMachineComponent = /*#__PURE__*/function () {
           _classPrivateFieldGet(this, _PurchaseProductComponent).hide();
 
           _classPrivateFieldGet(this, _SignInComponent).show();
+        }
+
+        if (route === 'manage' || route === 'recharge' || route === 'edit-user-info') {
+          alert(_utils_constants__WEBPACK_IMPORTED_MODULE_1__.ERROR_MSG.WRONG_ACCESS);
+          window.location.href = 'http://localhost:9000/#';
         }
       }
     }
@@ -3014,7 +3026,8 @@ var ERROR_MSG = {
     FAILED_SIGN_IN: '회원가입에 실패하였습니다!',
     FAILED_LOGIN: '아이디와 비밀번호를 다시 확인해주세요',
     FAILED_EDIT_USER_INFO: '회원 정보 수정에 실패하였습니다',
-    FAILED_GET_USER_INFO: '로그인유저의 정보를 가져오는 것에 실패했습니다'
+    FAILED_GET_USER_INFO: '로그인유저의 정보를 가져오는 것에 실패했습니다',
+    WRONG_ACCESS: '잘못된 접근입니다'
 };
 var NAME_LENGTH_LIMIT = 10;
 var PRICE_RANGE = {
