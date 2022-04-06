@@ -1528,11 +1528,12 @@ var VendingMachineComponent = /*#__PURE__*/function () {
           _classPrivateFieldGet(this, _EditUserComponent).show();
 
           _classPrivateFieldGet(this, _EditUserComponent).renderUserInfo();
-        } // if (route === 'login' || route === 'signin') {
-        //   alert(ERROR_MSG.WRONG_ACCESS);
-        //   window.location.href = 'http://localhost:9000/#';
-        // }
+        }
 
+        if (route === 'login' || route === 'signin') {
+          alert(_utils_constants__WEBPACK_IMPORTED_MODULE_1__.ERROR_MSG.WRONG_ACCESS);
+          window.location.href = '#';
+        }
       }
 
       if (!this.checkLoginStatus()) {
@@ -1578,11 +1579,12 @@ var VendingMachineComponent = /*#__PURE__*/function () {
           _classPrivateFieldGet(this, _PurchaseProductComponent).hide();
 
           _classPrivateFieldGet(this, _SignInComponent).show();
-        } // if (route === 'manage' || route === 'recharge' || route === 'edit-user-info') {
-        //   alert(ERROR_MSG.WRONG_ACCESS);
-        //   window.location.href = 'http://localhost:9000/#';
-        // }
+        }
 
+        if (route === 'manage' || route === 'recharge' || route === 'edit-user-info') {
+          alert(_utils_constants__WEBPACK_IMPORTED_MODULE_1__.ERROR_MSG.WRONG_ACCESS);
+          window.location.href = '#';
+        }
       }
     }
   }, {
