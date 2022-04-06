@@ -1422,7 +1422,6 @@ var VendingMachineComponent = /*#__PURE__*/function () {
     this.initDOM();
     this.initChildComponents();
     this.showSectionByRoute(hashRoute);
-    localStorage.clear();
   }
 
   _createClass(VendingMachineComponent, [{
