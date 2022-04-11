@@ -725,6 +725,319 @@ var SignInComponent = /*#__PURE__*/function () {
 
 /***/ }),
 
+/***/ "./src/components/VendingMachineComponent.js":
+/*!***************************************************!*\
+  !*** ./src/components/VendingMachineComponent.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _stores_localStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../stores/localStorage */ "./src/stores/localStorage.js");
+/* harmony import */ var _utils_constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/constants */ "./src/utils/constants.ts");
+/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index */ "./src/components/index.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedeclaration(obj, privateMap); privateMap.set(obj, value); }
+
+function _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError("Cannot initialize the same private elements twice on an object"); } }
+
+function _classPrivateFieldGet(receiver, privateMap) { var descriptor = _classExtractFieldDescriptor(receiver, privateMap, "get"); return _classApplyDescriptorGet(receiver, descriptor); }
+
+function _classApplyDescriptorGet(receiver, descriptor) { if (descriptor.get) { return descriptor.get.call(receiver); } return descriptor.value; }
+
+function _classPrivateFieldSet(receiver, privateMap, value) { var descriptor = _classExtractFieldDescriptor(receiver, privateMap, "set"); _classApplyDescriptorSet(receiver, descriptor, value); return value; }
+
+function _classExtractFieldDescriptor(receiver, privateMap, action) { if (!privateMap.has(receiver)) { throw new TypeError("attempted to " + action + " private field on non-instance"); } return privateMap.get(receiver); }
+
+function _classApplyDescriptorSet(receiver, descriptor, value) { if (descriptor.set) { descriptor.set.call(receiver, value); } else { if (!descriptor.writable) { throw new TypeError("attempted to set read only private field"); } descriptor.value = value; } }
+
+
+
+
+
+var _ProductManagementComponent = /*#__PURE__*/new WeakMap();
+
+var _PurchaseProductComponent = /*#__PURE__*/new WeakMap();
+
+var _RechargeChangeComponent = /*#__PURE__*/new WeakMap();
+
+var _HeaderComponent = /*#__PURE__*/new WeakMap();
+
+var _LoginComponent = /*#__PURE__*/new WeakMap();
+
+var _SignInComponent = /*#__PURE__*/new WeakMap();
+
+var _EditUserComponent = /*#__PURE__*/new WeakMap();
+
+var VendingMachineComponent = /*#__PURE__*/function () {
+  function VendingMachineComponent(hashRoute) {
+    _classCallCheck(this, VendingMachineComponent);
+
+    _classPrivateFieldInitSpec(this, _ProductManagementComponent, {
+      writable: true,
+      value: void 0
+    });
+
+    _classPrivateFieldInitSpec(this, _PurchaseProductComponent, {
+      writable: true,
+      value: void 0
+    });
+
+    _classPrivateFieldInitSpec(this, _RechargeChangeComponent, {
+      writable: true,
+      value: void 0
+    });
+
+    _classPrivateFieldInitSpec(this, _HeaderComponent, {
+      writable: true,
+      value: void 0
+    });
+
+    _classPrivateFieldInitSpec(this, _LoginComponent, {
+      writable: true,
+      value: void 0
+    });
+
+    _classPrivateFieldInitSpec(this, _SignInComponent, {
+      writable: true,
+      value: void 0
+    });
+
+    _classPrivateFieldInitSpec(this, _EditUserComponent, {
+      writable: true,
+      value: void 0
+    });
+
+    _defineProperty(this, "$app", void 0);
+
+    this.$app = document.querySelector('#app');
+    this.initDOM();
+    this.initChildComponents();
+    this.showSectionByRoute(hashRoute);
+  }
+
+  _createClass(VendingMachineComponent, [{
+    key: "initDOM",
+    value: function initDOM() {
+      this.tabButtonMap = {
+        manageProduct: this.$app.querySelector('#manage-product-tab'),
+        rechargeChange: this.$app.querySelector('#recharge-change-tab'),
+        purchaseProduct: this.$app.querySelector('#purchase-product-tab')
+      };
+      this.$nav = document.querySelector('nav');
+      this.$title = document.querySelector('h1');
+    }
+  }, {
+    key: "initChildComponents",
+    value: function initChildComponents() {
+      _classPrivateFieldSet(this, _HeaderComponent, new _index__WEBPACK_IMPORTED_MODULE_2__.HeaderComponent(this.$app));
+
+      _classPrivateFieldSet(this, _ProductManagementComponent, new _index__WEBPACK_IMPORTED_MODULE_2__.ProductManagementComponent(this.$app));
+
+      _classPrivateFieldSet(this, _PurchaseProductComponent, new _index__WEBPACK_IMPORTED_MODULE_2__.PurchaseProductComponent(this.$app));
+
+      _classPrivateFieldSet(this, _RechargeChangeComponent, new _index__WEBPACK_IMPORTED_MODULE_2__.RechargeChangeComponent(this.$app));
+
+      _classPrivateFieldSet(this, _LoginComponent, new _index__WEBPACK_IMPORTED_MODULE_2__.LoginComponent(this.$app));
+
+      _classPrivateFieldSet(this, _SignInComponent, new _index__WEBPACK_IMPORTED_MODULE_2__.SignInComponent(this.$app));
+
+      _classPrivateFieldSet(this, _EditUserComponent, new _index__WEBPACK_IMPORTED_MODULE_2__.EditUserInfoComponent(this.$app));
+    }
+  }, {
+    key: "showSectionByRoute",
+    value: function showSectionByRoute(route) {
+      var isLoginStatus = this.checkLoginStatus();
+
+      _classPrivateFieldGet(this, _HeaderComponent).headerShow();
+
+      this.$title.textContent = _utils_constants__WEBPACK_IMPORTED_MODULE_1__.HEADER_TITLE.MAIN;
+
+      if (isLoginStatus) {
+        this.$nav.classList.remove('hide');
+
+        _classPrivateFieldGet(this, _HeaderComponent).loginUserHide();
+
+        _classPrivateFieldGet(this, _HeaderComponent).userProfileShow();
+
+        _classPrivateFieldGet(this, _LoginComponent).hide();
+
+        _classPrivateFieldGet(this, _SignInComponent).hide();
+
+        if (route === _utils_constants__WEBPACK_IMPORTED_MODULE_1__.ROUTER_ADDRESS.MANAGE_PRODUCT) {
+          _classPrivateFieldGet(this, _RechargeChangeComponent).hide();
+
+          _classPrivateFieldGet(this, _PurchaseProductComponent).hide();
+
+          _classPrivateFieldGet(this, _LoginComponent).hide();
+
+          _classPrivateFieldGet(this, _EditUserComponent).hide();
+
+          _classPrivateFieldGet(this, _ProductManagementComponent).show();
+
+          this.focusTabButton('manageProduct');
+        }
+
+        if (route === _utils_constants__WEBPACK_IMPORTED_MODULE_1__.ROUTER_ADDRESS.RECHARGE_COIN) {
+          _classPrivateFieldGet(this, _PurchaseProductComponent).hide();
+
+          _classPrivateFieldGet(this, _ProductManagementComponent).hide();
+
+          _classPrivateFieldGet(this, _LoginComponent).hide();
+
+          _classPrivateFieldGet(this, _EditUserComponent).hide();
+
+          _classPrivateFieldGet(this, _RechargeChangeComponent).show();
+
+          this.focusTabButton('rechargeChange');
+        }
+
+        if (route === _utils_constants__WEBPACK_IMPORTED_MODULE_1__.ROUTER_ADDRESS.PURCHASE_PRODUCT) {
+          _classPrivateFieldGet(this, _ProductManagementComponent).hide();
+
+          _classPrivateFieldGet(this, _RechargeChangeComponent).hide();
+
+          _classPrivateFieldGet(this, _EditUserComponent).hide();
+
+          _classPrivateFieldGet(this, _PurchaseProductComponent).show();
+
+          this.focusTabButton('purchaseProduct');
+        }
+
+        if (route === _utils_constants__WEBPACK_IMPORTED_MODULE_1__.ROUTER_ADDRESS.EDIT_USER_INFO) {
+          this.$title.textContent = _utils_constants__WEBPACK_IMPORTED_MODULE_1__.HEADER_TITLE.EDIT_INFO;
+
+          _classPrivateFieldGet(this, _ProductManagementComponent).hide();
+
+          _classPrivateFieldGet(this, _RechargeChangeComponent).hide();
+
+          _classPrivateFieldGet(this, _PurchaseProductComponent).hide();
+
+          _classPrivateFieldGet(this, _HeaderComponent).loginUserHide();
+
+          _classPrivateFieldGet(this, _HeaderComponent).userProfileHide();
+
+          this.$nav.classList.add('hide');
+
+          _classPrivateFieldGet(this, _EditUserComponent).show();
+
+          _classPrivateFieldGet(this, _EditUserComponent).renderUserInfo();
+        }
+
+        if (route === _utils_constants__WEBPACK_IMPORTED_MODULE_1__.ROUTER_ADDRESS.LOGIN || route === _utils_constants__WEBPACK_IMPORTED_MODULE_1__.ROUTER_ADDRESS.SIGN_IN) {
+          alert(_utils_constants__WEBPACK_IMPORTED_MODULE_1__.ERROR_MSG.WRONG_ACCESS);
+          window.location.href = _utils_constants__WEBPACK_IMPORTED_MODULE_1__.ROUTER_ADDRESS.PURCHASE_PRODUCT;
+        }
+      }
+
+      if (!isLoginStatus) {
+        this.$nav.classList.add('hide');
+
+        _classPrivateFieldGet(this, _HeaderComponent).loginUserShow();
+
+        _classPrivateFieldGet(this, _HeaderComponent).userProfileHide();
+
+        _classPrivateFieldGet(this, _ProductManagementComponent).hide();
+
+        _classPrivateFieldGet(this, _RechargeChangeComponent).hide();
+
+        _classPrivateFieldGet(this, _EditUserComponent).hide();
+
+        if (route === _utils_constants__WEBPACK_IMPORTED_MODULE_1__.ROUTER_ADDRESS.PURCHASE_PRODUCT) {
+          _classPrivateFieldGet(this, _LoginComponent).hide();
+
+          _classPrivateFieldGet(this, _SignInComponent).hide();
+
+          _classPrivateFieldGet(this, _PurchaseProductComponent).show();
+        }
+
+        if (route === _utils_constants__WEBPACK_IMPORTED_MODULE_1__.ROUTER_ADDRESS.LOGIN) {
+          this.$title.textContent = _utils_constants__WEBPACK_IMPORTED_MODULE_1__.HEADER_TITLE.LOGIN;
+
+          _classPrivateFieldGet(this, _HeaderComponent).headerHide();
+
+          _classPrivateFieldGet(this, _PurchaseProductComponent).hide();
+
+          _classPrivateFieldGet(this, _SignInComponent).hide();
+
+          _classPrivateFieldGet(this, _LoginComponent).show();
+        }
+
+        if (route === _utils_constants__WEBPACK_IMPORTED_MODULE_1__.ROUTER_ADDRESS.SIGN_IN) {
+          this.$title.textContent = _utils_constants__WEBPACK_IMPORTED_MODULE_1__.HEADER_TITLE.SIGN_IN;
+
+          _classPrivateFieldGet(this, _HeaderComponent).headerHide();
+
+          _classPrivateFieldGet(this, _LoginComponent).hide();
+
+          _classPrivateFieldGet(this, _PurchaseProductComponent).hide();
+
+          _classPrivateFieldGet(this, _SignInComponent).show();
+        }
+
+        if (route === _utils_constants__WEBPACK_IMPORTED_MODULE_1__.ROUTER_ADDRESS.MANAGE_PRODUCT || route === _utils_constants__WEBPACK_IMPORTED_MODULE_1__.ROUTER_ADDRESS.RECHARGE_COIN || route === _utils_constants__WEBPACK_IMPORTED_MODULE_1__.ROUTER_ADDRESS.EDIT_USER_INFO) {
+          alert(_utils_constants__WEBPACK_IMPORTED_MODULE_1__.ERROR_MSG.WRONG_ACCESS);
+          window.location.href = _utils_constants__WEBPACK_IMPORTED_MODULE_1__.ROUTER_ADDRESS.PURCHASE_PRODUCT;
+        }
+      }
+    }
+  }, {
+    key: "focusTabButton",
+    value: function focusTabButton(buttonName) {
+      Object.entries(this.tabButtonMap).forEach(function (_ref) {
+        var _ref2 = _slicedToArray(_ref, 2),
+            key = _ref2[0],
+            node = _ref2[1];
+
+        if (key === buttonName) {
+          node.classList.add('checked');
+          return;
+        }
+
+        node.classList.remove('checked');
+      });
+    }
+  }, {
+    key: "checkLoginStatus",
+    value: function checkLoginStatus() {
+      var accessToken = _stores_localStorage__WEBPACK_IMPORTED_MODULE_0__.accessTokenStorage.getAccessToken();
+
+      if (accessToken) {
+        return true;
+      }
+
+      return false;
+    }
+  }]);
+
+  return VendingMachineComponent;
+}();
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (VendingMachineComponent);
+
+/***/ }),
+
 /***/ "./src/components/common/CoinTableComponent.js":
 /*!*****************************************************!*\
   !*** ./src/components/common/CoinTableComponent.js ***!
@@ -1220,7 +1533,6 @@ var HeaderComponent = /*#__PURE__*/function () {
     });
 
     this.$parent = $parent;
-    this.$sibling = this.$parent.querySelector('h1');
     this.mount();
     this.initDOM();
     this.bindEventListener();
@@ -1229,7 +1541,7 @@ var HeaderComponent = /*#__PURE__*/function () {
   _createClass(HeaderComponent, [{
     key: "mount",
     value: function mount() {
-      this.$sibling.insertAdjacentHTML('afterend', this.generateTemplate());
+      this.$parent.insertAdjacentHTML('afterbegin', this.generateTemplate());
     }
   }, {
     key: "initDOM",
@@ -1308,318 +1620,29 @@ var HeaderComponent = /*#__PURE__*/function () {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "EditUserInfoComponent": () => (/* reexport safe */ _EditUserInfoComponent__WEBPACK_IMPORTED_MODULE_0__["default"]),
+/* harmony export */   "HeaderComponent": () => (/* reexport safe */ _headerComponent__WEBPACK_IMPORTED_MODULE_1__["default"]),
+/* harmony export */   "LoginComponent": () => (/* reexport safe */ _loginComponent__WEBPACK_IMPORTED_MODULE_2__["default"]),
+/* harmony export */   "ProductManagementComponent": () => (/* reexport safe */ _ProductManagementComponent__WEBPACK_IMPORTED_MODULE_3__["default"]),
+/* harmony export */   "PurchaseProductComponent": () => (/* reexport safe */ _PurchaseProductComponent__WEBPACK_IMPORTED_MODULE_4__["default"]),
+/* harmony export */   "RechargeChangeComponent": () => (/* reexport safe */ _RechargeChangeComponent__WEBPACK_IMPORTED_MODULE_5__["default"]),
+/* harmony export */   "SignInComponent": () => (/* reexport safe */ _SinginComponent__WEBPACK_IMPORTED_MODULE_6__["default"])
 /* harmony export */ });
-/* harmony import */ var _stores_localStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../stores/localStorage */ "./src/stores/localStorage.js");
-/* harmony import */ var _utils_constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/constants */ "./src/utils/constants.ts");
-/* harmony import */ var _EditUserInfoComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./EditUserInfoComponent */ "./src/components/EditUserInfoComponent.js");
-/* harmony import */ var _headerComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./headerComponent */ "./src/components/headerComponent.js");
-/* harmony import */ var _loginComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./loginComponent */ "./src/components/loginComponent.js");
-/* harmony import */ var _ProductManagementComponent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ProductManagementComponent */ "./src/components/ProductManagementComponent.js");
-/* harmony import */ var _PurchaseProductComponent__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./PurchaseProductComponent */ "./src/components/PurchaseProductComponent.js");
-/* harmony import */ var _RechargeChangeComponent__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./RechargeChangeComponent */ "./src/components/RechargeChangeComponent.js");
-/* harmony import */ var _SinginComponent__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./SinginComponent */ "./src/components/SinginComponent.js");
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+/* harmony import */ var _EditUserInfoComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./EditUserInfoComponent */ "./src/components/EditUserInfoComponent.js");
+/* harmony import */ var _headerComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./headerComponent */ "./src/components/headerComponent.js");
+/* harmony import */ var _loginComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./loginComponent */ "./src/components/loginComponent.js");
+/* harmony import */ var _ProductManagementComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ProductManagementComponent */ "./src/components/ProductManagementComponent.js");
+/* harmony import */ var _PurchaseProductComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./PurchaseProductComponent */ "./src/components/PurchaseProductComponent.js");
+/* harmony import */ var _RechargeChangeComponent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./RechargeChangeComponent */ "./src/components/RechargeChangeComponent.js");
+/* harmony import */ var _SinginComponent__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./SinginComponent */ "./src/components/SinginComponent.js");
 
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedeclaration(obj, privateMap); privateMap.set(obj, value); }
-
-function _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError("Cannot initialize the same private elements twice on an object"); } }
-
-function _classPrivateFieldGet(receiver, privateMap) { var descriptor = _classExtractFieldDescriptor(receiver, privateMap, "get"); return _classApplyDescriptorGet(receiver, descriptor); }
-
-function _classApplyDescriptorGet(receiver, descriptor) { if (descriptor.get) { return descriptor.get.call(receiver); } return descriptor.value; }
-
-function _classPrivateFieldSet(receiver, privateMap, value) { var descriptor = _classExtractFieldDescriptor(receiver, privateMap, "set"); _classApplyDescriptorSet(receiver, descriptor, value); return value; }
-
-function _classExtractFieldDescriptor(receiver, privateMap, action) { if (!privateMap.has(receiver)) { throw new TypeError("attempted to " + action + " private field on non-instance"); } return privateMap.get(receiver); }
-
-function _classApplyDescriptorSet(receiver, descriptor, value) { if (descriptor.set) { descriptor.set.call(receiver, value); } else { if (!descriptor.writable) { throw new TypeError("attempted to set read only private field"); } descriptor.value = value; } }
-
-
-
-
-
-
-
-
-
-
-
-var _ProductManagementComponent = /*#__PURE__*/new WeakMap();
-
-var _PurchaseProductComponent = /*#__PURE__*/new WeakMap();
-
-var _RechargeChangeComponent = /*#__PURE__*/new WeakMap();
-
-var _HeaderComponent = /*#__PURE__*/new WeakMap();
-
-var _LoginComponent = /*#__PURE__*/new WeakMap();
-
-var _SignInComponent = /*#__PURE__*/new WeakMap();
-
-var _EditUserComponent = /*#__PURE__*/new WeakMap();
-
-var VendingMachineComponent = /*#__PURE__*/function () {
-  function VendingMachineComponent(hashRoute) {
-    _classCallCheck(this, VendingMachineComponent);
-
-    _classPrivateFieldInitSpec(this, _ProductManagementComponent, {
-      writable: true,
-      value: void 0
-    });
-
-    _classPrivateFieldInitSpec(this, _PurchaseProductComponent, {
-      writable: true,
-      value: void 0
-    });
-
-    _classPrivateFieldInitSpec(this, _RechargeChangeComponent, {
-      writable: true,
-      value: void 0
-    });
-
-    _classPrivateFieldInitSpec(this, _HeaderComponent, {
-      writable: true,
-      value: void 0
-    });
-
-    _classPrivateFieldInitSpec(this, _LoginComponent, {
-      writable: true,
-      value: void 0
-    });
-
-    _classPrivateFieldInitSpec(this, _SignInComponent, {
-      writable: true,
-      value: void 0
-    });
-
-    _classPrivateFieldInitSpec(this, _EditUserComponent, {
-      writable: true,
-      value: void 0
-    });
-
-    _defineProperty(this, "$app", void 0);
-
-    this.$app = document.querySelector('#app');
-    this.initDOM();
-    this.initChildComponents();
-    this.showSectionByRoute(hashRoute);
-  }
-
-  _createClass(VendingMachineComponent, [{
-    key: "initDOM",
-    value: function initDOM() {
-      this.tabButtonMap = {
-        manageProduct: this.$app.querySelector('#manage-product-tab'),
-        rechargeChange: this.$app.querySelector('#recharge-change-tab'),
-        purchaseProduct: this.$app.querySelector('#purchase-product-tab')
-      };
-      this.$nav = document.querySelector('nav');
-      this.$title = document.querySelector('h1');
-    }
-  }, {
-    key: "initChildComponents",
-    value: function initChildComponents() {
-      _classPrivateFieldSet(this, _HeaderComponent, new _headerComponent__WEBPACK_IMPORTED_MODULE_3__["default"](this.$app));
-
-      _classPrivateFieldSet(this, _ProductManagementComponent, new _ProductManagementComponent__WEBPACK_IMPORTED_MODULE_5__["default"](this.$app));
-
-      _classPrivateFieldSet(this, _PurchaseProductComponent, new _PurchaseProductComponent__WEBPACK_IMPORTED_MODULE_6__["default"](this.$app));
-
-      _classPrivateFieldSet(this, _RechargeChangeComponent, new _RechargeChangeComponent__WEBPACK_IMPORTED_MODULE_7__["default"](this.$app));
-
-      _classPrivateFieldSet(this, _LoginComponent, new _loginComponent__WEBPACK_IMPORTED_MODULE_4__["default"](this.$app));
-
-      _classPrivateFieldSet(this, _SignInComponent, new _SinginComponent__WEBPACK_IMPORTED_MODULE_8__["default"](this.$app));
-
-      _classPrivateFieldSet(this, _EditUserComponent, new _EditUserInfoComponent__WEBPACK_IMPORTED_MODULE_2__["default"](this.$app));
-    }
-  }, {
-    key: "showSectionByRoute",
-    value: function showSectionByRoute(route) {
-      _classPrivateFieldGet(this, _HeaderComponent).headerShow();
-
-      this.$title.textContent = '🍿 자판기 🍿';
-
-      if (this.checkLoginStatus()) {
-        this.$nav.classList.remove('hide');
-
-        _classPrivateFieldGet(this, _HeaderComponent).loginUserHide();
-
-        _classPrivateFieldGet(this, _HeaderComponent).userProfileShow();
-
-        _classPrivateFieldGet(this, _LoginComponent).hide();
-
-        _classPrivateFieldGet(this, _SignInComponent).hide();
-
-        if (route === 'manage') {
-          _classPrivateFieldGet(this, _RechargeChangeComponent).hide();
-
-          _classPrivateFieldGet(this, _PurchaseProductComponent).hide();
-
-          _classPrivateFieldGet(this, _LoginComponent).hide();
-
-          _classPrivateFieldGet(this, _EditUserComponent).hide();
-
-          _classPrivateFieldGet(this, _ProductManagementComponent).show();
-
-          this.focusTabButton('manageProduct');
-        }
-
-        if (route === 'recharge') {
-          _classPrivateFieldGet(this, _PurchaseProductComponent).hide();
-
-          _classPrivateFieldGet(this, _ProductManagementComponent).hide();
-
-          _classPrivateFieldGet(this, _LoginComponent).hide();
-
-          _classPrivateFieldGet(this, _EditUserComponent).hide();
-
-          _classPrivateFieldGet(this, _RechargeChangeComponent).show();
-
-          this.focusTabButton('rechargeChange');
-        }
-
-        if (route === '') {
-          _classPrivateFieldGet(this, _ProductManagementComponent).hide();
-
-          _classPrivateFieldGet(this, _RechargeChangeComponent).hide();
-
-          _classPrivateFieldGet(this, _EditUserComponent).hide();
-
-          _classPrivateFieldGet(this, _PurchaseProductComponent).show();
-
-          this.focusTabButton('purchaseProduct');
-        }
-
-        if (route === 'edit-user-info') {
-          this.$title.textContent = '회원 정보 수정';
-
-          _classPrivateFieldGet(this, _ProductManagementComponent).hide();
-
-          _classPrivateFieldGet(this, _RechargeChangeComponent).hide();
-
-          _classPrivateFieldGet(this, _PurchaseProductComponent).hide();
-
-          _classPrivateFieldGet(this, _HeaderComponent).loginUserHide();
-
-          _classPrivateFieldGet(this, _HeaderComponent).userProfileHide();
-
-          this.$nav.classList.add('hide');
-
-          _classPrivateFieldGet(this, _EditUserComponent).show();
-
-          _classPrivateFieldGet(this, _EditUserComponent).renderUserInfo();
-        }
-
-        if (route === 'login' || route === 'signin') {
-          alert(_utils_constants__WEBPACK_IMPORTED_MODULE_1__.ERROR_MSG.WRONG_ACCESS);
-          window.location.href = '#';
-        }
-      }
-
-      if (!this.checkLoginStatus()) {
-        this.$nav.classList.add('hide');
-
-        _classPrivateFieldGet(this, _HeaderComponent).loginUserShow();
-
-        _classPrivateFieldGet(this, _HeaderComponent).userProfileHide();
-
-        _classPrivateFieldGet(this, _ProductManagementComponent).hide();
-
-        _classPrivateFieldGet(this, _RechargeChangeComponent).hide();
-
-        _classPrivateFieldGet(this, _EditUserComponent).hide();
-
-        if (route === '') {
-          _classPrivateFieldGet(this, _LoginComponent).hide();
-
-          _classPrivateFieldGet(this, _SignInComponent).hide();
-
-          _classPrivateFieldGet(this, _PurchaseProductComponent).show();
-        }
-
-        if (route === 'login') {
-          this.$title.textContent = '로그인';
-
-          _classPrivateFieldGet(this, _HeaderComponent).headerHide();
-
-          _classPrivateFieldGet(this, _PurchaseProductComponent).hide();
-
-          _classPrivateFieldGet(this, _SignInComponent).hide();
-
-          _classPrivateFieldGet(this, _LoginComponent).show();
-        }
-
-        if (route === 'signin') {
-          this.$title.textContent = '회원가입';
-
-          _classPrivateFieldGet(this, _HeaderComponent).headerHide();
-
-          _classPrivateFieldGet(this, _LoginComponent).hide();
-
-          _classPrivateFieldGet(this, _PurchaseProductComponent).hide();
-
-          _classPrivateFieldGet(this, _SignInComponent).show();
-        }
-
-        if (route === 'manage' || route === 'recharge' || route === 'edit-user-info') {
-          alert(_utils_constants__WEBPACK_IMPORTED_MODULE_1__.ERROR_MSG.WRONG_ACCESS);
-          window.location.href = '#';
-        }
-      }
-    }
-  }, {
-    key: "focusTabButton",
-    value: function focusTabButton(buttonName) {
-      Object.entries(this.tabButtonMap).forEach(function (_ref) {
-        var _ref2 = _slicedToArray(_ref, 2),
-            key = _ref2[0],
-            node = _ref2[1];
-
-        if (key === buttonName) {
-          node.classList.add('checked');
-          return;
-        }
-
-        node.classList.remove('checked');
-      });
-    }
-  }, {
-    key: "checkLoginStatus",
-    value: function checkLoginStatus() {
-      var accessToken = _stores_localStorage__WEBPACK_IMPORTED_MODULE_0__.accessTokenStorage.getAccessToken();
-
-      if (accessToken) {
-        return true;
-      }
-
-      return false;
-    }
-  }]);
-
-  return VendingMachineComponent;
-}();
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (VendingMachineComponent);
 
 /***/ }),
 
@@ -1777,14 +1800,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./constants */ "./src/utils/constants.ts");
 
-var showSnackBar = function showSnackBar(mention) {
-  var snackBar = document.querySelector('.snack-bar');
-  snackBar.textContent = mention;
-  snackBar.classList.add('is-active');
-  setTimeout(function () {
-    return snackBar.classList.remove('is-active');
-  }, _constants__WEBPACK_IMPORTED_MODULE_0__.SNACKBAR_DELAY_TIME);
+
+var snackBar = function snackBar() {
+  var snackBarElement = document.querySelector('.snack-bar');
+  var isExistSnackBar = null;
+  return function (mention) {
+    if (isExistSnackBar) return;
+    snackBarElement.textContent = mention;
+    snackBarElement.classList.add('is-active');
+    isExistSnackBar = setTimeout(function () {
+      snackBarElement.classList.remove('is-active');
+      clearTimeout(isExistSnackBar);
+      isExistSnackBar = null;
+    }, _constants__WEBPACK_IMPORTED_MODULE_0__.SNACKBAR_DELAY_TIME);
+  };
 };
+
+var showSnackBar = snackBar();
 
 /***/ }),
 
@@ -2708,30 +2740,23 @@ var AuthStore = /** @class */ (function () {
         var _this = this;
         this.reducer = (_a = {},
             _a[_utils_constants__WEBPACK_IMPORTED_MODULE_1__.AuthActionTypes.SIGN_IN] = function (payload) { return __awaiter(_this, void 0, void 0, function () {
-                var email, name, password, userData, response, _a, accessToken, id;
-                return __generator(this, function (_b) {
-                    switch (_b.label) {
+                var email, name, password, userData, response;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
                         case 0:
                             email = payload.email, name = payload.name, password = payload.password;
                             userData = JSON.stringify({ email: email, name: name, password: password });
-                            return [4 /*yield*/, fetch('https://vendingmachineserver-api.herokuapp.com/register', {
+                            return [4 /*yield*/, fetch('https://vendingmachineserver-api.herokuapp.com/users/register', {
                                     method: 'POST',
                                     headers: { 'Content-Type': 'application/json' },
                                     body: userData
                                 })];
                         case 1:
-                            response = _b.sent();
+                            response = _a.sent();
                             if (response.status === 400) {
                                 throw new Error(_utils_constants__WEBPACK_IMPORTED_MODULE_1__.ERROR_MSG.FAILED_SIGN_IN);
                             }
-                            return [4 /*yield*/, response.json()];
-                        case 2:
-                            _a = _b.sent(), accessToken = _a.accessToken, id = _a.user.id;
-                            _localStorage__WEBPACK_IMPORTED_MODULE_0__.accessTokenStorage.setAccessToken(accessToken);
-                            _localStorage__WEBPACK_IMPORTED_MODULE_0__.userIdStorage.setUserId(id);
-                            return [4 /*yield*/, this.setLoginUserInfo()];
-                        case 3:
-                            _b.sent();
+                            window.location.href = _utils_constants__WEBPACK_IMPORTED_MODULE_1__.ROUTER_ADDRESS.LOGIN;
                             return [2 /*return*/];
                     }
                 });
@@ -2761,6 +2786,7 @@ var AuthStore = /** @class */ (function () {
                             return [4 /*yield*/, this.setLoginUserInfo()];
                         case 3:
                             _b.sent();
+                            window.location.href = _utils_constants__WEBPACK_IMPORTED_MODULE_1__.ROUTER_ADDRESS.PURCHASE_PRODUCT;
                             return [2 /*return*/];
                     }
                 });
@@ -2768,6 +2794,7 @@ var AuthStore = /** @class */ (function () {
             _a[_utils_constants__WEBPACK_IMPORTED_MODULE_1__.AuthActionTypes.LOGOUT] = function (payload) {
                 localStorage.clear();
                 window.location.href = '#login';
+                window.location.href = _utils_constants__WEBPACK_IMPORTED_MODULE_1__.ROUTER_ADDRESS.PURCHASE_PRODUCT;
             },
             _a[_utils_constants__WEBPACK_IMPORTED_MODULE_1__.AuthActionTypes.EDIT_USER_INFO] = function (payload) { return __awaiter(_this, void 0, void 0, function () {
                 var userId, name, password, editedData, editResponse;
@@ -2790,6 +2817,7 @@ var AuthStore = /** @class */ (function () {
                             return [4 /*yield*/, this.setLoginUserInfo()];
                         case 2:
                             _a.sent();
+                            window.location.href = _utils_constants__WEBPACK_IMPORTED_MODULE_1__.ROUTER_ADDRESS.PURCHASE_PRODUCT;
                             return [2 /*return*/];
                     }
                 });
@@ -2807,7 +2835,6 @@ var AuthStore = /** @class */ (function () {
                         return [4 /*yield*/, this.reducer[actionType](payload)];
                     case 1:
                         _c.sent();
-                        window.location.href = '#';
                         return [3 /*break*/, 3];
                     case 2:
                         _b = _c.sent();
@@ -2991,7 +3018,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ACTION_TYPES": () => (/* binding */ ACTION_TYPES),
 /* harmony export */   "NOTICE_MENTION": () => (/* binding */ NOTICE_MENTION),
 /* harmony export */   "SNACKBAR_DELAY_TIME": () => (/* binding */ SNACKBAR_DELAY_TIME),
-/* harmony export */   "AuthActionTypes": () => (/* binding */ AuthActionTypes)
+/* harmony export */   "AuthActionTypes": () => (/* binding */ AuthActionTypes),
+/* harmony export */   "HEADER_TITLE": () => (/* binding */ HEADER_TITLE),
+/* harmony export */   "ROUTER_ADDRESS": () => (/* binding */ ROUTER_ADDRESS)
 /* harmony export */ });
 var COIN_VALUES = {
     coin500: 500,
@@ -3075,6 +3104,20 @@ var AuthActionTypes = {
     LOGOUT: 'logout',
     SIGN_IN: 'signIn',
     EDIT_USER_INFO: 'editUserInfo'
+};
+var HEADER_TITLE = {
+    MAIN: '🍿 자판기 🍿',
+    EDIT_INFO: '회원 정보 수정',
+    LOGIN: '로그인',
+    SIGN_IN: '회원가입'
+};
+var ROUTER_ADDRESS = {
+    PURCHASE_PRODUCT: '',
+    MANAGE_PRODUCT: 'manage',
+    RECHARGE_COIN: 'recharge',
+    EDIT_USER_INFO: 'edit-user-info',
+    LOGIN: 'login',
+    SIGN_IN: 'signin'
 };
 
 
@@ -3313,13 +3356,12 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _images_empty_img_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../images/empty-img.png */ "./images/empty-img.png");
 /* harmony import */ var _src_styles_index_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../src/styles/index.css */ "./src/styles/index.css");
-/* harmony import */ var _src_components_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../src/components/index */ "./src/components/index.js");
-
+/* harmony import */ var _components_VendingMachineComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/VendingMachineComponent */ "./src/components/VendingMachineComponent.js");
 
 
 
 var hashRoute = window.location.hash.replace('#', '');
-var vendingMachineComponent = new _src_components_index__WEBPACK_IMPORTED_MODULE_2__["default"](hashRoute);
+var vendingMachineComponent = new _components_VendingMachineComponent__WEBPACK_IMPORTED_MODULE_2__["default"](hashRoute);
 window.addEventListener('hashchange', function () {
     var hash = window.location.hash.replace('#', '');
     vendingMachineComponent.showSectionByRoute(hash);
